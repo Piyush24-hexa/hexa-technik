@@ -24,3 +24,4 @@ This is the official website for Luna Technologies Pvt. Ltd., built with React, 
    ```bash
    npm run build
    ```
+# Hexa
