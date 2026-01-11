@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Search, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", href: "#" },
-  { label: "Products & Brands", href: "#products" },
-  { label: "Industry Segment", href: "#industries" },
-  { label: "About Us", href: "#about" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Career", href: "#career" },
-  { label: "Reach Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Products & Brands", href: "/products" },
+  { label: "Industry Segment", href: "/industries" },
+  { label: "About Us", href: "/about" },
+  { label: "Gallery", href: "/products" },
+  { label: "Career", href: "/careers" },
+  { label: "Reach Us", href: "/contact" },
 ];
 
 const Header = () => {
@@ -35,7 +36,7 @@ const Header = () => {
       <div className="luna-container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-heading font-bold text-xl">L</span>
@@ -49,20 +50,20 @@ const Header = () => {
                 </p>
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${
                   isScrolled ? "text-foreground" : "text-secondary-foreground"
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
