@@ -1,92 +1,84 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import PageBanner from "@/components/PageBanner";
-import VerticalsSidebar from "@/components/VerticalsSidebar";
-import heroProducts from "@/assets/hero-products.jpg";
-
-const brands = [
-  { name: "HIWIN", category: "Mechatronics", color: "#E31E24" },
-  { name: "KHS-LG", category: "Bearings", color: "#DAA520" },
-  { name: "Panasonic", category: "Automation", color: "#0068B7" },
-  { name: "Mindman", category: "Pneumatics", color: "#00A651" },
-  { name: "TPI", category: "Bearings", color: "#E31E24" },
-  { name: "TiMOTION", category: "Medical", color: "#00AEEF" },
-  { name: "Haion", category: "Bearings", color: "#F7941D" },
-  { name: "YYC", category: "Mechatronics", color: "#1C1C1C" },
-  { name: "ZD Motor", category: "Automation", color: "#0054A6" },
-  { name: "Syntec", category: "Automation", color: "#E31E24" },
-  { name: "Shihlin Electric", category: "Automation", color: "#00529B" },
-  { name: "FATEK", category: "Automation", color: "#003366" },
-  { name: "Flexem", category: "Automation", color: "#0066CC" },
-  { name: "Weintek", category: "Automation", color: "#00A651" },
-  { name: "Sungil", category: "Pneumatics", color: "#E31E24" },
-  { name: "Techman", category: "Robotics", color: "#00A651" },
-  { name: "HIWIN Robotics", category: "Robotics", color: "#E31E24" },
-  { name: "Hi-More", category: "Robotics", color: "#F7941D" },
-  { name: "CCM", category: "Mechatronics", color: "#E31E24" },
-  { name: "Adtech", category: "Automation", color: "#0066CC" },
-  { name: "Won Linear", category: "Mechatronics", color: "#003366" },
-  { name: "JSS", category: "Automation", color: "#E31E24" },
-  { name: "RayTools", category: "Mechatronics", color: "#E31E24" },
-  { name: "Raycus", category: "Mechatronics", color: "#00AEEF" },
-];
+import { ChevronRight } from "lucide-react";
 
 const Products = () => {
+  const categories = [
+    "Bearings & Linear Motion",
+    "Automation & Control",
+    "Robotics",
+    "Pneumatics",
+    "Medical Equipment",
+    "Industrial Tools"
+  ];
+
+  const brands = [
+    { name: "TPI Bearings", logo: "TPI" }, // Placeholder for logos
+    { name: "Hiwin", logo: "HIWIN" },
+    { name: "Other Brand", logo: "BRAND" },
+    { name: "Techno", logo: "TECHNO" },
+    { name: "Gen3", logo: "GEN3" },
+    { name: "Servos", logo: "SERVOS" },
+  ];
+
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <PageBanner
-          title="All Brands"
-          backgroundImage={heroProducts}
-        />
+    <div className="min-h-screen bg-white">
+      {/* Page Title Banner */}
+      <div className="bg-gray-100 py-12 border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-foreground">Products & Brands</h1>
+          <p className="text-gray-500 mt-2">Home / Products</p>
+        </div>
+      </div>
 
-        <section className="py-16 md:py-24 bg-background">
-          <div className="luna-container">
-            <div className="grid lg:grid-cols-[300px_1fr] gap-8">
-              {/* Sidebar */}
-              <aside className="hidden lg:block">
-                <div className="sticky top-24">
-                  <VerticalsSidebar />
-                </div>
-              </aside>
-
-              {/* Main Content */}
-              <div>
-                <div className="flex items-center justify-between mb-8">
-                  <h2 className="font-heading text-2xl font-bold text-foreground">
-                    All Brands
-                  </h2>
-                  <div className="h-px flex-1 bg-border ml-6" />
-                </div>
-
-                {/* Brands Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {brands.map((brand, index) => (
-                    <a
-                      key={brand.name}
-                      href="#"
-                      className="group bg-background border border-border rounded-xl p-6 flex flex-col items-center justify-center h-32 hover:border-primary hover:luna-elevated-shadow transition-all duration-300"
-                      style={{ animationDelay: `${index * 50}ms` }}
-                    >
-                      <span 
-                        className="font-heading font-bold text-lg text-center group-hover:text-primary transition-colors"
-                        style={{ color: brand.color }}
-                      >
-                        {brand.name}
-                      </span>
-                      <span className="text-xs text-muted-foreground mt-2">
-                        {brand.category}
-                      </span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
+      <div className="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-12">
+        {/* Sidebar */}
+        <aside className="w-full md:w-1/4">
+          <div className="bg-secondary p-6 rounded-lg sticky top-24">
+            <h3 className="text-xl font-bold mb-6 text-foreground">Categories</h3>
+            <ul className="space-y-3">
+              {categories.map((cat) => (
+                <li key={cat}>
+                  <a href="#" className="flex items-center justify-between text-gray-600 hover:text-primary font-medium transition-colors p-2 hover:bg-white rounded">
+                    {cat}
+                    <ChevronRight className="w-4 h-4" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </section>
-      </main>
-      <Footer />
+        </aside>
+
+        {/* Main Content */}
+        <div className="w-full md:w-3/4">
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">Distributing Excellence</h2>
+            <p className="text-gray-600 leading-relaxed">
+              We partner with the world's leading manufacturers to bring you premium quality industrial components.
+              Our extensive network ensures that you get genuine products with specific manufacturer warranties
+              and technical support.
+            </p>
+          </div>
+
+          <h3 className="text-xl font-bold mb-6 text-foreground border-b pb-2">Our Brands</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {brands.map((brand) => (
+              <div key={brand.name} className="h-32 border border-border flex items-center justify-center p-4 hover:border-primary transition-colors bg-white hover:shadow-sm">
+                <span className="text-xl font-bold text-gray-400">{brand.logo}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Solution Finder CTA */}
+          <div className="mt-16 bg-hexa-dark text-white p-8 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Need a specific solution?</h3>
+              <p className="text-gray-300">Use our detailed product finder to locate exactly what you need.</p>
+            </div>
+            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded font-bold transition-colors whitespace-nowrap">
+              Find Solution
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

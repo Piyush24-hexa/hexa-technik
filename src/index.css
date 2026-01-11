@@ -1,111 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   :root {
-    /* Luna Technologies Industrial Design System */
     --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
-
+    --foreground: 0 0% 32.5%;
+    /* #535353 */
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
-
+    --card-foreground: 0 0% 32.5%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
-
-    /* Luna Red - Primary Brand Color */
-    --primary: 358 82% 50%;
+    --popover-foreground: 0 0% 32.5%;
+    --primary: 265 80% 50%;
+    /* #6d28d9 - Purple */
     --primary-foreground: 0 0% 100%;
-
-    /* Dark Navy/Charcoal for backgrounds */
-    --secondary: 220 20% 15%;
-    --secondary-foreground: 0 0% 100%;
-
-    /* Light gray for muted elements */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 45%;
-
-    /* Accent - same as primary for consistency */
-    --accent: 358 82% 50%;
+    --secondary: 0 0% 96%;
+    /* #f5f5f5 */
+    --secondary-foreground: 0 0% 32.5%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 265 80% 50%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 358 82% 50%;
-
-    --radius: 0.5rem;
-
-    /* Custom Luna tokens */
-    --luna-red: 358 82% 50%;
-    --luna-dark: 220 25% 12%;
-    --luna-charcoal: 220 20% 18%;
-    --luna-steel: 220 15% 35%;
-    --luna-light: 220 14% 96%;
-    --luna-white: 0 0% 100%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 12% / 0.85), hsl(220 20% 18% / 0.75));
-    --gradient-dark: linear-gradient(180deg, hsl(220 25% 12%), hsl(220 20% 18%));
-    --gradient-red: linear-gradient(135deg, hsl(358 82% 50%), hsl(358 82% 40%));
-
-    /* Shadows */
-    --shadow-card: 0 4px 24px -4px hsl(220 25% 12% / 0.1);
-    --shadow-elevated: 0 12px 40px -8px hsl(220 25% 12% / 0.15);
-    --shadow-glow: 0 0 40px hsl(358 82% 50% / 0.2);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 220 25% 12%;
-    --foreground: 0 0% 98%;
-
-    --card: 220 20% 18%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 220 20% 18%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 358 82% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 220 15% 25%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 220 15% 25%;
-    --muted-foreground: 220 10% 65%;
-
-    --accent: 358 82% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 15% 25%;
-    --input: 220 15% 25%;
-    --ring: 358 82% 50%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 265 80% 50%;
+    --radius: 0rem;
+    --hexa-purple: 265 80% 50%;
+    --hexa-dark: 0 0% 32.5%;
+    --hexa-light: 0 0% 96%;
   }
 }
 
@@ -114,92 +40,8 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-  }
-}
-
-@layer components {
-  .luna-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .luna-hero-overlay {
-    background: var(--gradient-hero);
-  }
-
-  .luna-section-dark {
-    background: var(--gradient-dark);
-  }
-
-  .luna-text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-red);
-  }
-
-  .luna-card-shadow {
-    box-shadow: var(--shadow-card);
-  }
-
-  .luna-elevated-shadow {
-    box-shadow: var(--shadow-elevated);
-  }
-
-  .luna-glow {
-    box-shadow: var(--shadow-glow);
-  }
-}
-
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+    @apply bg-background text-foreground;
+    font-family: 'Ubuntu', sans-serif;
   }
 }

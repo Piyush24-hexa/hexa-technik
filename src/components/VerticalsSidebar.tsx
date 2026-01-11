@@ -3,39 +3,39 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const verticals = [
-  { 
-    icon: Cog, 
-    label: "Automation", 
+  {
+    icon: Cog,
+    label: "Automation",
     href: "/automation",
     subItems: ["Adtech", "Panasonic", "Fatek", "Weintek", "Syntec", "Shihlin Electric"]
   },
-  { 
-    icon: Circle, 
-    label: "Bearings", 
+  {
+    icon: Circle,
+    label: "Bearings",
     href: "/bearings",
     subItems: ["KHS-LG", "TPI", "Haion"]
   },
-  { 
-    icon: Settings, 
-    label: "Mechatronics", 
+  {
+    icon: Settings,
+    label: "Mechatronics",
     href: "/mechatronics",
     subItems: ["HIWIN", "YYC Drives", "Won Linear", "LF-TW"]
   },
-  { 
-    icon: HeartPulse, 
-    label: "Medical", 
+  {
+    icon: HeartPulse,
+    label: "Medical",
     href: "/medical",
     subItems: ["TiMOTION"]
   },
-  { 
-    icon: Wind, 
-    label: "Pneumatics", 
+  {
+    icon: Wind,
+    label: "Pneumatics",
     href: "/pneumatics",
     subItems: ["Mindman", "Sungil"]
   },
-  { 
-    icon: Bot, 
-    label: "Robotics", 
+  {
+    icon: Bot,
+    label: "Robotics",
     href: "/robotics",
     subItems: ["HIWIN Robotics", "Techman", "Hi-More", "Fairino"]
   },
@@ -45,7 +45,7 @@ const VerticalsSidebar = () => {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
 
   return (
-    <div className="bg-background rounded-xl border border-border p-6 luna-card-shadow">
+    <div className="bg-background rounded-xl border border-border p-6 shadow-md">
       <h3 className="font-heading text-lg font-semibold text-foreground mb-4">
         Featured Verticals
       </h3>
@@ -62,10 +62,9 @@ const VerticalsSidebar = () => {
                 </div>
                 <span className="text-sm font-medium text-foreground">{vertical.label}</span>
               </div>
-              <ChevronDown 
-                className={`h-4 w-4 text-muted-foreground transition-transform ${
-                  expandedItem === vertical.label ? 'rotate-180' : ''
-                }`} 
+              <ChevronDown
+                className={`h-4 w-4 text-muted-foreground transition-transform ${expandedItem === vertical.label ? 'rotate-180' : ''
+                  }`}
               />
             </button>
             {expandedItem === vertical.label && (

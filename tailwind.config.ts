@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Ubuntu', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,29 +50,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        // Hexa custom colors
+        hexa: {
+          purple: '#6d28d9', // Deep purple
+          dark: '#1a1a1a',
+          light: '#f5f5f5'
         },
-        // Luna custom colors
-        luna: {
-          red: "hsl(var(--luna-red))",
-          dark: "hsl(var(--luna-dark))",
-          charcoal: "hsl(var(--luna-charcoal))",
-          steel: "hsl(var(--luna-steel))",
-          light: "hsl(var(--luna-light))",
-          white: "hsl(var(--luna-white))",
-        },
-      },
-      fontFamily: {
-        sans: ['Open Sans', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

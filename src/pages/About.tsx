@@ -1,133 +1,62 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import PageBanner from "@/components/PageBanner";
-import heroAbout from "@/assets/hero-about.jpg";
-import { Cog, Circle, Settings, HeartPulse, Wind, Bot } from "lucide-react";
-
-const businesses = [
-  {
-    icon: Cog,
-    title: "Automation",
-    description: "Industry leading technologies to enable smaller, smarter and faster companies transform their products and bring high-quality solutions to their customers.",
-  },
-  {
-    icon: Circle,
-    title: "Bearings",
-    description: "High-performance Bearings, Spindle Bearings and Clutch Bearings to enable material systems solutions for aerospace, automotive and other demanding environments.",
-  },
-  {
-    icon: Settings,
-    title: "Mechatronics",
-    description: "Durable solutions for LM Rails, Cross Rollers, Couplings, Racks, Pinions, and reliable solutions that support a growing company.",
-  },
-  {
-    icon: HeartPulse,
-    title: "Medical",
-    description: "Focusing on Plug and Play products of critical parts for the Medical Industry.",
-  },
-  {
-    icon: Wind,
-    title: "Pneumatics",
-    description: "Performance solutions that keep pneumatic processes safe and operations run smoothly.",
-  },
-  {
-    icon: Bot,
-    title: "Robotics",
-    description: "Providing Innovative and Energy-Efficient robots serving the injection moulding and automation markets.",
-  },
-];
+import { Cpu, Settings, Zap, Heart, Globe, Target } from "lucide-react";
 
 const About = () => {
+  const businesses = [
+    { name: "Automation", icon: Cpu, desc: "State-of-the-art automation solutions for industry 4.0" },
+    { name: "Bearings", icon: Settings, desc: "High precision bearings for all industrial applications" },
+    { name: "Mechatronics", icon: Zap, desc: "Integrated mechanical and electronic systems" },
+    { name: "Medical", icon: Heart, desc: "Advanced medical equipment components" },
+    { name: "Pneumatics", icon: Globe, desc: "Efficient pneumatic control systems" },
+    { name: "Robotics", icon: Target, desc: "Next-gen robotic solutions for manufacturing" },
+  ];
+
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <PageBanner
-          title="About Us"
-          backgroundImage={heroAbout}
+    <div className="min-h-screen bg-white">
+      {/* Hero Banner */}
+      <div className="relative h-[400px] w-full bg-black overflow-hidden">
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2070"
+          alt="About Hexa Technik"
+          className="absolute inset-0 w-full h-full object-cover"
         />
+        <div className="relative z-20container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Innovating an EXTRAORDINARY FUTURE</h1>
+          <p className="text-xl text-gray-200">About Hexa Technik</p>
+        </div>
+      </div>
 
-        {/* Video Section */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="luna-container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Video Placeholder */}
-              <div className="aspect-video bg-muted rounded-2xl overflow-hidden luna-elevated-shadow">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/IsgwNNL4ML4"
-                  title="Luna Technologies"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+      {/* Our Businesses Grid */}
+      <section className="py-20 container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Our Businesses</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {businesses.map((biz) => (
+            <div key={biz.name} className="p-8 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <biz.icon className="w-8 h-8" />
               </div>
-
-              {/* Content */}
-              <div>
-                <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Taking functionality and productivity to next level
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Luna is leading supplier of Industrial Components, Bearings, Pneumatics, Motors, 
-                  Controllers and Drives Indian Industries. We're focused on driving ongoing Safety, 
-                  Innovation, Efficiency, Reliability and Productivity.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  With best-in-class manufacturing facilities, unmatched Digital Expertise, always-on 
-                  global services delivery and unrivaled product breadth and performance. Luna is the 
-                  industry's one-stop shop.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Today, we meet the total lifecycle needs of the entire company, from New Panels to 
-                  Robots, Service and Repair adding value at every touch point to help customers realize 
-                  the most value from their investment.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">{biz.name}</h3>
+              <p className="text-gray-600">{biz.desc}</p>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Our Businesses */}
-        <section className="py-16 md:py-24 bg-muted">
-          <div className="luna-container">
-            <div className="text-center mb-12">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Our Businesses
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {businesses.map((business, index) => (
-                <div
-                  key={business.title}
-                  className="bg-background rounded-2xl p-8 luna-card-shadow hover:luna-elevated-shadow transition-all duration-300 group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                    <business.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-4">
-                    {business.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {business.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Tagline */}
-        <section className="py-20 luna-section-dark text-center">
-          <div className="luna-container">
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-secondary-foreground">
-              Precision. Performance. <span className="text-primary">Pride.</span>
-            </h2>
-          </div>
-        </section>
-      </main>
-      <Footer />
+      {/* Content Section */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Who We Are</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Hexa Technik is a pioneer in industrial automation and component distribution.
+            With over 30 years of experience, we have established ourselves as a trusted partner for industries
+            ranging from automotive to medical technology.
+          </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Our mission is to empower industries with cutting-edge technology and reliable components
+            that drive efficiency and innovation.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };

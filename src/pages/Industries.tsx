@@ -42,7 +42,7 @@ const Industries = () => {
         />
 
         <section className="py-16 md:py-24 bg-background">
-          <div className="luna-container">
+          <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-[300px_1fr] gap-8">
               {/* Sidebar */}
               <aside className="hidden lg:block">
@@ -67,7 +67,7 @@ const Industries = () => {
                         <a
                           key={brand}
                           href="#"
-                          className="group bg-background border border-border rounded-xl p-6 flex items-center justify-center h-24 hover:border-primary hover:luna-elevated-shadow transition-all duration-300"
+                          className="group bg-background border border-border rounded-xl p-6 flex items-center justify-center h-24 hover:border-primary hover:shadow-lg transition-all duration-300"
                         >
                           <span className="font-heading font-semibold text-center text-foreground group-hover:text-primary transition-colors">
                             {brand}

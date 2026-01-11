@@ -22,12 +22,12 @@ const Automation = () => {
       <main>
         <PageBanner
           title="Automation"
-          subtitle="Luna carries more automation and control brand names than any other distributor in India. Luna is a high-service level authorised distributor of industrial automation products, motors, drives, controllers, and HMI products with more than 40 sales offices serving in India."
+          subtitle="Hexa Technik carries more automation and control brand names than any other distributor in India. Hexa Technik is a high-service level authorised distributor of industrial automation products, motors, drives, controllers, and HMI products with more than 40 sales offices serving in India."
           backgroundImage={heroProducts}
         />
 
         <section className="py-16 md:py-24 bg-background">
-          <div className="luna-container">
+          <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-[300px_1fr] gap-8">
               {/* Sidebar */}
               <aside className="hidden lg:block">
@@ -50,7 +50,7 @@ const Automation = () => {
                   {automationBrands.map((brand, index) => (
                     <div
                       key={brand.name}
-                      className="bg-background border border-border rounded-xl p-6 hover:border-primary hover:luna-elevated-shadow transition-all duration-300"
+                      className="bg-background border border-border rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300"
                     >
                       <h3 className="font-heading text-xl font-bold text-primary mb-4">
                         {brand.name}

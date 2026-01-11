@@ -3,18 +3,18 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="relative py-20 md:py-32 luna-section-dark overflow-hidden">
+    <section className="relative py-20 md:py-32 bg-hexa-dark overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full" 
+        <div className="absolute top-0 left-0 w-full h-full"
           style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--luna-white)) 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--hexa-light)) 1px, transparent 0)`,
             backgroundSize: '40px 40px'
           }}
         />
       </div>
 
-      <div className="relative luna-container">
+      <div className="relative container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Tagline */}
           <div>
@@ -37,7 +37,7 @@ const CTASection = () => {
               Try our Solution Finder.
             </h3>
             <p className="text-secondary-foreground/70 mb-8">
-              Our Solution Finder can find Luna brands and products to help your company solve its challenges.
+              Our Solution Finder can find Hexa brands and products to help your company solve its challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group">

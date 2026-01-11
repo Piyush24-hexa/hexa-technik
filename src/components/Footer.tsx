@@ -1,165 +1,77 @@
-import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const footerLinks = {
-  verticals: [
-    { label: "Automation", href: "#" },
-    { label: "Bearings", href: "#" },
-    { label: "Mechatronics", href: "#" },
-    { label: "Pneumatics", href: "#" },
-    { label: "Medical", href: "#" },
-    { label: "Robotics", href: "#" },
-  ],
-  company: [
-    { label: "About", href: "#about" },
-    { label: "Career", href: "#" },
-    { label: "Newsroom", href: "#" },
-    { label: "Global Locations", href: "#" },
-  ],
-  solutions: [
-    { label: "Product Lines", href: "#" },
-    { label: "Industries", href: "#" },
-    { label: "Brands", href: "#" },
-    { label: "Solution Finder", href: "#" },
-  ],
-  ethics: [
-    { label: "Code of Conduct", href: "#" },
-    { label: "Terms of Use", href: "#" },
-    { label: "Privacy Policy", href: "#" },
-  ],
-};
-
-const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+export const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      {/* Main Footer */}
-      <div className="luna-container py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Brand Column */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-xl">L</span>
-              </div>
-              <div>
-                <span className="font-heading font-bold text-2xl">Luna</span>
-                <p className="text-[10px] text-secondary-foreground/60 -mt-1">move with us...</p>
-              </div>
+    <footer className="bg-hexa-light pt-16 pb-8 border-t border-gray-200">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h3 className="text-lg font-bold text-black mb-6">Verticals</h3>
+            <ul className="space-y-3">
+              {["Automation", "Bearings", "Linear Motion", "Mechatronics", "Medical", "Robotics"].map((item) => (
+                <li key={item}>
+                  <Link to="/products" className="text-sm text-gray-600 hover:text-hexa-purple transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-black mb-6">Our Company</h3>
+            <ul className="space-y-3">
+              {[
+                { name: "About Us", to: "/about" },
+                { name: "Gallery", to: "/gallery" },
+                { name: "News & Events", to: "/products" }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.to} className="text-sm text-gray-600 hover:text-hexa-purple transition-colors">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-black mb-6">Our Solutions</h3>
+            <ul className="space-y-3">
+              {["Industry 4.0", "Smart Factory", "Custom Solutions"].map((item) => (
+                <li key={item}>
+                  <Link to="/products" className="text-sm text-gray-600 hover:text-hexa-purple transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-black mb-6">Ethics & Compliance</h3>
+            <ul className="space-y-3 mb-8">
+              <li><Link to="#" className="text-sm text-gray-600 hover:text-hexa-purple transition-colors">Code of Conduct</Link></li>
+              <li><Link to="#" className="text-sm text-gray-600 hover:text-hexa-purple transition-colors">Whistle Blower Policy</Link></li>
+            </ul>
+
+            <div className="flex gap-4">
+              {[Facebook, Linkedin, Instagram, Youtube].map((Icon, i) => (
+                <a key={i} href="#" className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white hover:bg-hexa-purple transition-colors">
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
-            <p className="text-secondary-foreground/70 text-sm mb-6">
-              India's #1 Industrial Automation Company. Leading supplier of Industrial Automation Products and Services.
-            </p>
-            <div className="space-y-3 text-sm">
-              <a href="#" className="flex items-center gap-3 text-secondary-foreground/70 hover:text-primary transition-colors">
-                <MapPin className="h-4 w-4 flex-shrink-0" />
-                <span>Navi Mumbai, Maharashtra, India</span>
-              </a>
-              <a href="tel:+919876543210" className="flex items-center gap-3 text-secondary-foreground/70 hover:text-primary transition-colors">
-                <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>+91 98765 43210</span>
-              </a>
-              <a href="mailto:info@luna.co.in" className="flex items-center gap-3 text-secondary-foreground/70 hover:text-primary transition-colors">
-                <Mail className="h-4 w-4 flex-shrink-0" />
-                <span>info@luna.co.in</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Verticals */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-              Verticals
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.verticals.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Our Company */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-              Our Company
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Our Solutions */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-              Our Solutions
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Ethics & Compliance */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-              Ethics & Compliance
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.ethics.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-secondary-foreground/10">
-        <div className="luna-container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-secondary-foreground/50 text-center md:text-left">
-            © 2025 Luna Technologies Pvt. Ltd. Luna™, the Luna Logo, and all trademarks and service marks 
-            denoted with ™, ℠ or ® are owned by affiliates of Luna.
-          </p>
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
-          >
-            <span>TOP</span>
-            <ArrowUp className="h-4 w-4" />
-          </button>
+        <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          <p>© 2026 Hexa Technik. All Rights Reserved.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-hexa-purple">Terms of Use</a>
+            <a href="#" className="hover:text-hexa-purple">Privacy Policy</a>
+          </div>
         </div>
       </div>
     </footer>
