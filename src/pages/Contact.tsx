@@ -49,22 +49,22 @@ const Contact = () => {
         {/* accent bar */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-primary" />
 
-        <div className="relative container mx-auto px-4 py-24">
+        <div className="relative container mx-auto px-4 py-16 md:py-24">
           <p className="text-primary font-bold uppercase tracking-widest text-xs mb-4">
             Get In Touch
           </p>
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
             Contact Us
           </h1>
-          <p className="text-gray-300 text-lg max-w-md">
+          <p className="text-gray-300 text-base md:text-lg max-w-md">
             Have a product inquiry or need a custom engineering solution? We're here for you.
           </p>
         </div>
       </div>
 
       {/* ── Contact Method Cards ── */}
-      <div className="container mx-auto px-4 -mt-10 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="container mx-auto px-4 -mt-6 md:-mt-10 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {contactMethods.map((m) => (
             <a
               key={m.label}
@@ -88,13 +88,12 @@ const Contact = () => {
       </div>
 
       {/* ── Main Content ── */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="container mx-auto px-4 py-10 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-          {/* Form — 2/3 width */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 order-2 lg:order-1">
             <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="bg-hexa-dark px-8 py-5 flex items-center justify-between">
+              <div className="bg-hexa-dark px-5 md:px-8 py-4 md:py-5 flex items-center justify-between">
                 <div>
                   <h2 className="text-white font-bold text-xl">Enquiry Form</h2>
                   <p className="text-gray-400 text-sm">Fill in your details below</p>

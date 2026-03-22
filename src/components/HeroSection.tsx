@@ -53,18 +53,18 @@ export const HeroSection = () => {
       ))}
 
       <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center">
-        <div className="max-w-3xl animate-fade-up">
-          <h3 className="text-white text-xl md:text-2xl font-bold mb-4 tracking-wider uppercase">
+        <div className="max-w-3xl">
+          <h3 className="text-white text-base md:text-2xl font-bold mb-3 tracking-wider uppercase">
             {heroSlides[currentSlide].desc}
           </h3>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight min-h-[1.2em]">
+          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight min-h-[1.2em]">
             {heroSlides[currentSlide].title} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
               {heroSlides[currentSlide].subtitle}
             </span>
           </h1>
 
-          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-2 transition-all transform hover:translate-x-1">
+          <button className="bg-primary hover:bg-primary/90 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg flex items-center gap-2 transition-all transform hover:translate-x-1">
             Explore Solutions <ArrowRight className="w-5 h-5" />
           </button>
         </div>

@@ -16,7 +16,7 @@ export const ContentSections = () => {
             {/* Verticals Grid */}
             <section className="py-20 bg-[#f8f9fc]">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+                    <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 text-center">
                         {[
                             { name: "Automation", icon: Cpu },
                             { name: "Robotics", icon: Target },
@@ -39,7 +39,7 @@ export const ContentSections = () => {
             {/* Values Section */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
+                    <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
                         <div className="lg:w-1/3">
                             <h2 className="text-4xl font-bold text-black mb-6">What Drives Us</h2>
                             <p className="text-gray-600 leading-relaxed text-lg">
