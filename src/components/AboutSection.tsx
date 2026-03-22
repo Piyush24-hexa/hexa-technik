@@ -6,13 +6,14 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="animate-slide-up">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              We're making essential innovations the world needs today.
+              Turning bold ideas into industry-defining realities.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              From Robotics to Medical Equipments, to deliver efficient and faster systems,
-              we use science and innovation to make so many of the things that you use everyday possible.
-              At Hexa Technik, we're working to make the world a <strong className="text-foreground">Safer</strong>,
-              <strong className="text-foreground"> Healthier</strong> and <strong className="text-foreground">Better</strong> place to live.
+              From precision robotics to cutting-edge medical systems, Hexa Technik engineers solutions
+              that push the boundaries of what technology can achieve. We combine deep domain expertise
+              with relentless innovation to build products that make industries more efficient,
+              reliable, and future-ready. Our mission is simple: a <strong className="text-foreground">Safer</strong>,
+              <strong className="text-foreground"> Smarter</strong>, and <strong className="text-foreground">More Connected</strong> world.
             </p>
           </div>
 
@@ -24,14 +25,14 @@ const AboutSection = () => {
                   30<sup className="text-4xl">+</sup>
                 </span>
                 <p className="font-heading text-xl md:text-2xl font-semibold text-foreground mt-4">
-                  Years
+                  Years of Excellence
                 </p>
                 <div className="mt-6 pt-6 border-t border-border">
                   <p className="text-muted-foreground">
-                    Hexa Technik has been recognized as the industry's
+                    Hexa Technik is trusted as the industry's
                   </p>
                   <p className="font-heading text-xl font-bold text-foreground mt-2">
-                    PROBLEM SOLVER
+                    INNOVATION LEADER
                   </p>
                 </div>
               </div>

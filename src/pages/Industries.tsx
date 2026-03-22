@@ -6,34 +6,34 @@ import heroProducts from "@/assets/hero-products.jpg";
 
 const industryCategories = [
   {
+    category: "Solar",
+    brands: [],
+  },
+  {
     category: "Automation",
     brands: ["Adtech", "Panasonic", "FATEK", "Weintek", "Syntec", "ZD Motor", "Shihlin Electric", "Flexem"],
   },
   {
-    category: "Bearings",
-    brands: ["KHS-LG", "TPI", "Haion"],
+    category: "Robotics",
+    brands: ["HIWIN Robotics", "Techman", "Hi-More", "Fairino"],
   },
   {
     category: "Mechatronics",
     brands: ["HIWIN", "YYC Drives", "Won Linear", "LF-TW", "CCM", "RayTools", "Raycus"],
   },
   {
-    category: "Medical",
-    brands: ["TiMOTION"],
-  },
-  {
     category: "Pneumatics",
     brands: ["Mindman", "Sungil"],
   },
   {
-    category: "Robotics",
-    brands: ["HIWIN Robotics", "Techman", "Hi-More", "Fairino"],
+    category: "Medical",
+    brands: ["TiMOTION"],
   },
 ];
 
 const Industries = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f8f9fc]">
       <Header />
       <main>
         <PageBanner
@@ -41,7 +41,7 @@ const Industries = () => {
           backgroundImage={heroProducts}
         />
 
-        <section className="py-16 md:py-24 bg-background">
+        <section className="py-16 md:py-24 bg-transparent">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-[300px_1fr] gap-8">
               {/* Sidebar */}
@@ -67,7 +67,7 @@ const Industries = () => {
                         <a
                           key={brand}
                           href="#"
-                          className="group bg-background border border-border rounded-xl p-6 flex items-center justify-center h-24 hover:border-primary hover:shadow-lg transition-all duration-300"
+                          className="group bg-white border border-gray-100 shadow-sm rounded-2xl p-6 flex items-center justify-center h-24 hover:border-primary hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                         >
                           <span className="font-heading font-semibold text-center text-foreground group-hover:text-primary transition-colors">
                             {brand}

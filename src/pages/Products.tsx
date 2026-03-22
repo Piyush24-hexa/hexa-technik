@@ -1,38 +1,61 @@
 import { ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+  const navigate = useNavigate();
+
   const categories = [
-    "Bearings & Linear Motion",
     "Automation & Control",
     "Robotics",
     "Pneumatics",
     "Medical Equipment",
-    "Industrial Tools"
+    "Industrial Tools",
+    "Software",
   ];
 
-  const brands = [
-    { name: "TPI Bearings", logo: "TPI" }, // Placeholder for logos
-    { name: "Hiwin", logo: "HIWIN" },
-    { name: "Other Brand", logo: "BRAND" },
-    { name: "Techno", logo: "TECHNO" },
-    { name: "Gen3", logo: "GEN3" },
-    { name: "Servos", logo: "SERVOS" },
+  const solutions = [
+    { name: "PLC", desc: "Programmable Logic Controllers for industrial automation" },
+    { name: "HMI", desc: "Human Machine Interfaces for intuitive operator control" },
+    { name: "Servo", desc: "High-precision servo motors and drives" },
+    { name: "Electric Actuator", desc: "Linear and rotary electric actuators for precise motion" },
+    { name: "Connectivity Solutions", desc: "Industrial networking and IoT connectivity hardware" },
+    { name: "Ball Screw", desc: "High-efficiency ball screw assemblies for linear motion" },
+    { name: "Linear Guideway", desc: "Precision linear guideways and rail systems" },
+    { name: "Variable Frequency Drive", desc: "VFDs for speed and torque control of AC motors" },
+    { name: "Robots", desc: "Collaborative and industrial robotic systems" },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Page Title Banner */}
-      <div className="bg-gray-100 py-12 border-b border-gray-200">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-foreground">Products & Brands</h1>
-          <p className="text-gray-500 mt-2">Home / Products</p>
+    <div className="min-h-screen bg-[#f8f9fc]">
+      {/* ── Hero ── */}
+      <div className="relative bg-hexa-dark text-white overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "36px 36px",
+          }}
+        />
+        {/* accent bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-primary" />
+
+        <div className="relative container mx-auto px-4 py-24">
+          <p className="text-primary font-bold uppercase tracking-widest text-xs mb-4">
+            Home / Products
+          </p>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+            Products & Solutions
+          </h1>
+          <p className="text-gray-300 text-lg max-w-2xl">
+            Distributing premium quality industrial components and seamless integration services.
+          </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-12">
         {/* Sidebar */}
         <aside className="w-full md:w-1/4">
-          <div className="bg-secondary p-6 rounded-lg sticky top-24">
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-24">
             <h3 className="text-xl font-bold mb-6 text-foreground">Categories</h3>
             <ul className="space-y-3">
               {categories.map((cat) => (
@@ -58,11 +81,17 @@ const Products = () => {
             </p>
           </div>
 
-          <h3 className="text-xl font-bold mb-6 text-foreground border-b pb-2">Our Brands</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {brands.map((brand) => (
-              <div key={brand.name} className="h-32 border border-border flex items-center justify-center p-4 hover:border-primary transition-colors bg-white hover:shadow-sm">
-                <span className="text-xl font-bold text-gray-400">{brand.logo}</span>
+          <h3 className="text-xl font-bold mb-6 text-foreground border-b border-gray-200 pb-2">Our Solutions</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {solutions.map((s) => (
+              <div
+                key={s.name}
+                className="bg-white border border-gray-100 rounded-2xl p-6 hover:border-primary hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              >
+                <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {s.name}
+                </h4>
+                <p className="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -71,9 +100,12 @@ const Products = () => {
           <div className="mt-16 bg-hexa-dark text-white p-8 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-2xl font-bold mb-2">Need a specific solution?</h3>
-              <p className="text-gray-300">Use our detailed product finder to locate exactly what you need.</p>
+              <p className="text-gray-300">Talk to our engineers — we'll find exactly what you need.</p>
             </div>
-            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded font-bold transition-colors whitespace-nowrap">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded font-bold transition-colors whitespace-nowrap"
+            >
               Find Solution
             </button>
           </div>

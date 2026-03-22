@@ -6,30 +6,24 @@ interface PageBannerProps {
 
 const PageBanner = ({ title, subtitle, backgroundImage }: PageBannerProps) => {
   return (
-    <section className="relative h-[50vh] min-h-[400px] flex items-center">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={backgroundImage}
-          alt={title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+    <section className="relative bg-hexa-dark text-white overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundSize: "36px 36px",
+        }}
+      />
+      {/* accent bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-primary" />
 
-      {/* Content */}
-      <div className="relative container mx-auto px-4 pt-20">
-        <div className="max-w-3xl animate-slide-up">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight">
-            {title}
-          </h1>
-          <div className="w-16 h-1 bg-primary mt-4" />
-          {subtitle && (
-            <p className="text-secondary-foreground/80 text-lg md:text-xl mt-6 max-w-2xl">
-              {subtitle}
-            </p>
-          )}
-        </div>
+      <div className="relative container mx-auto px-4 py-24">
+        <p className="text-primary font-bold uppercase tracking-widest text-xs mb-4">
+          {subtitle || "Hexa Technik"}
+        </p>
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+          {title}
+        </h1>
       </div>
     </section>
   );
